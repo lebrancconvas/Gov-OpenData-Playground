@@ -1,45 +1,48 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import Counter from './lib/Counter.svelte'
+  import axios from 'axios';
+  import { onMount } from 'svelte';
+  import type { College } from './utils/college.interface';
+
+  let colleges: College[] = [];
+
+  const getCollegeData = async() => {
+    const res = await fetch('https://data.go.th/dataset/84954e4a-3302-4b05-9dfc-c636f30b62ab/resource/31ddd8a7-c99a-43eb-8c2e-9644ddb1608b/download/university.json');
+    const data = await res.json();
+    colleges = data.features;
+  };
+
+  onMount(getCollegeData);
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank"> 
-      <img src="/vite.svg" class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank"> 
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
-
-  <div class="card">
-    <Counter />
-  </div>
-
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
+  <header>
+    <div id="heading">
+      <h1>College BKK</h1>
+    </div>
+    <div id="bio">
+      <h2>
+        Wiki for college student in BKK
+      </h2>
+    </div>
+  </header>
+  <section id="display">
+    {#each colleges as college}
+    <div id="college-card">
+      <div id="title">
+        {college.properties.name}
+      </div>
+      <div id="geo-location">
+        Latitude: {college.geometry.coordinates[0]}
+        Longtitude: {college.geometry.coordinates[1]}
+      </div>
+    </div>
+    {/each}
+  </section>
 </main>
 
 <style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
+  #college-card {
+    border: 1px solid black;
+    margin: 5px 0;
   }
 </style>
