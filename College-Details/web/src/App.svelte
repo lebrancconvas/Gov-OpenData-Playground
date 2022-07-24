@@ -45,6 +45,9 @@
 </main>
 
 <style>
+  main {
+    font-family: "DM Sans", sans-serif;
+  }
   header {
     text-align: center;
   }
@@ -52,6 +55,9 @@
     border: 3px solid black;
     margin: 8px auto;
     width: 50%;
+    border-radius: 3px;
+    box-shadow: 1px 1px 1px black;
+    padding: 5px;
   }
 
   #title {
