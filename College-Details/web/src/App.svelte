@@ -31,6 +31,7 @@
       <div id="title">
         {college.properties.name}
       </div>
+      <hr>
       <div id="address">
         ที่อยู่: {college.properties.address}
       </div>
