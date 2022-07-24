@@ -31,8 +31,12 @@
       <div id="title">
         {college.properties.name}
       </div>
+      <div id="address">
+        ที่อยู่: {college.properties.address}
+      </div>
       <div id="geo-location">
         Latitude: {college.geometry.coordinates[0]}
+        |
         Longtitude: {college.geometry.coordinates[1]}
       </div>
     </div>
@@ -41,8 +45,16 @@
 </main>
 
 <style>
+  header {
+    text-align: center;
+  }
   #college-card {
-    border: 1px solid black;
-    margin: 5px 0;
+    border: 3px solid black;
+    margin: 8px auto;
+    width: 50%;
+  }
+
+  #title {
+    font-size: 20px;
   }
 </style>
