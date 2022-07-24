@@ -21,7 +21,7 @@
     </div>
     <div id="bio">
       <h2>
-        Information about college in BKK
+        รวบรวมข้อมูลเกี่ยวกับมหาวิทยาลัย ที่ตั้งภายในกรุงเทพมหานคร
       </h2>
     </div>
   </header>
