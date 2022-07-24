@@ -21,7 +21,7 @@
     </div>
     <div id="bio">
       <h2>
-        Wiki for college student in BKK
+        Information about college in BKK
       </h2>
     </div>
   </header>
