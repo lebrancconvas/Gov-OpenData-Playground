@@ -52,13 +52,25 @@
   header {
     text-align: center;
   }
+
+  #display {
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+  }
   #college-card {
     border: 3px solid black;
     margin: 8px auto;
-    width: 50%;
+    width: 80%;
     border-radius: 3px;
     box-shadow: 1px 1px 1px black;
     padding: 5px;
+    cursor: pointer;
+  }
+
+  #college-card:hover {
+    box-shadow: 2px 2px 2px black;
+    transform: scale(0.995);
   }
 
   #title {
